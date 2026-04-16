@@ -1,0 +1,108 @@
+.cards-section {
+  max-width: 960px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.cards-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 1.1rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.layer-card {
+  background: var(--surface);
+  padding: 1rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: background 0.2s ease;
+  cursor: default;
+  min-width: 0;
+}
+.layer-card:hover { background: var(--surface-2); }
+
+.card-tag {
+  font-size: 0.58rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-title {
+  font-family: 'Satoshi', sans-serif;   /* ← off Cabinet Grotesk */
+  font-size: 0.63rem;
+  font-weight: 600;                      /* ← was 700 */
+  color: var(--text);
+  line-height: 1.2;
+}
+.card-body {
+  font-size: 0.62rem;
+  color: var(--muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.node-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin-top: 0.2rem;
+}
+
+.node-pill {
+  font-size: 0.54rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #555;
+  white-space: nowrap;
+}
+
+/* ── RESPONSIVE ── */
+
+/* Medium screens — 2 columns wide, wrap to rows */
+@media (max-width: 860px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-tag   { font-size: 0.6rem; }
+  .card-title { font-size: 0.78rem; }   /* slightly bigger on mobile for readability */
+  .card-body  { font-size: 0.68rem; -webkit-line-clamp: 4; }
+  .node-pill  { font-size: 0.58rem; }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .cards-grid {
+    grid-template-columns: 1fr;         /* single column — full content visible */
+  }
+  .card-body { -webkit-line-clamp: unset; }  /* show all text on single col */
+}

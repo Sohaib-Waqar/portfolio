@@ -1,0 +1,167 @@
+.skills-page {
+  background: var(--bg);
+  min-height: 100vh;
+  padding-top: 52px;
+}
+
+/* ── HERO ── */
+.skills-hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem 3rem;
+}
+
+.skills-hero-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 1rem;
+}
+
+.skills-hero h1 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.skills-hero h1 em { color: var(--green); font-style: normal; }
+
+/* ── ARROW NAV SWITCHER (like reference image) ── */
+.skills-nav {
+  max-width: 960px;
+  margin: 0 auto 2.5rem;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.skills-nav-arrow {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+.skills-nav-arrow:hover:not(:disabled) {
+  border-color: var(--border-hover);
+  color: var(--text);
+  background: var(--surface);
+}
+.skills-nav-arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.skills-nav-title {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  min-width: 180px;
+  text-align: center;
+  transition: opacity 0.25s ease;
+}
+
+/* ── SLIDER ── */
+.skills-slider-outer {
+  overflow: hidden;
+  position: relative;
+}
+
+.skills-slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.skills-slide {
+  min-width: 100%;
+  padding: 0 2.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ── RADAR ── */
+.radar-wrap {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1;
+  position: relative;
+}
+.radar-wrap canvas { width: 100%; height: 100%; display: block; }
+
+/* ── DOT INDICATORS ── */
+.slide-dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.slide-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--faint);
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+  padding: 0;
+}
+.slide-dot.active { transform: scale(1.5); }
+
+/* ── DETAIL CARD (description only, no bars) ── */
+.skill-detail {
+  width: 100%;
+  max-width: 520px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill-detail-title {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.skill-detail-count {
+  font-size: 0.68rem;
+  color: var(--faint);
+  letter-spacing: 0.06em;
+}
+
+.skill-detail-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .skills-hero  { padding: 4rem 1.25rem 2rem; }
+  .skills-nav   { padding: 0 1.25rem; }
+  .skills-slide { padding: 0 1.25rem 3rem; }
+}
